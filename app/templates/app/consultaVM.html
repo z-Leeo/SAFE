@@ -1,0 +1,104 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<body class="consultavm">
+    
+
+
+<div class="container-consulta">
+    <img src="{% static 'app/img/medico3.jpg' %}" alt="" class="medico3">
+    
+    <section class="heor">
+        <div class="heading">
+            <h2>Consultas Medicas</h2>
+        </div>
+        <div class="container-medicina">
+            <div class="hero-image">
+                <img class="imgMedicina" src="{% static 'app/img/examen.jpg' %}" alt="">
+            </div>
+            <div class="hero-content">
+                <h3>Ingrese su Rut o nombre para buscar su registro</h3>
+                <p>En esta sección, te ofrecemos una experiencia de búsqueda de
+                     consultas médicas optimizada y personalizada.
+                      Nuestra plataforma te permite explorar una amplia 
+                      red de profesionales de la salud, especializados en 
+                      diversas áreas médicas, como Cardiologia, Dermatologia, Traumatologia, etc.
+                      Nos enorgullecemos de brindar un entorno seguro y confidencial 
+                      para tus necesidades de salud. Todas las consultas se realizan 
+                      de manera virtual o presencial, según tu elección. 
+                      La comunicación fluida entre pacientes y profesionales es 
+                      fundamental para nosotros, y estamos comprometidos a garantizar
+                      que cada encuentro sea satisfactorio y esclarecedor.
+                </p>
+                <center><button class="botonI">Inicio</button></center>
+              
+            </div>
+
+
+            
+
+        </div>
+       
+
+    </section>
+    
+    
+</div>
+
+
+<div class="botonBusc" style="margin-bottom: 200px;">
+    <form method="get" action="{% url 'consulta_registro_vm' %}" >
+        <div class="search-box" style="background-color: rgb(27, 98, 231);">
+          <div class="input-box1" style="color: black;">
+            <i class='bx bx-search'></i>
+            <input type="text" type="submit" placeholder="Buscar... " name="registro_id">
+          </div>
+        </div>
+        </form>
+    </div>
+
+
+    {% if registro %}
+    <div class="contenedor-informe">
+        <h1 class="tituloInf">Informes de Atenciones Medicas</h1>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Nombre Completo Paciente</th>
+                    <th>RUT Paciente</th>
+                    <th>Nombre del Medico</th>
+                    <th>Fecha Atención Medica</th>
+                    <th>Género</th>
+                    <th>Previsión del Paciente</th>
+                    <th>Ocupación del Paciente</th>
+                    <th>Servicio de Atención</th>
+                    <th>Historial Medico</th>
+                    <th>Alergias</th>
+                    <th>Siguiente Atención</th>
+                </tr>
+            </thead>
+            <tbody class="active-row">
+                <tr>
+                    <td>{{ registro.nombre_completoM }}</td>
+                    <td>{{ registro.rutM }}</td>
+                    <td>{{ registro.nombre_medicoM }}</td>
+                    <td>{{ registro.fecha_atencionM }}</td>
+                    <td>{{ registro.genero1 }}</td>
+                    <td>{{ registro.previsionM }}</td>
+                    <td>{{ registro.ocupacionM }}</td>
+                    <td>{{ registro.servicio_atencionM }}</td>
+                    <td>{{ registro.historialM }}</td>
+                    <td>{{ registro.alergiaM }}</td>
+                    <td>{{ registro.fecha_proxM }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endif %}
+
+</body>
+
+
+{% endblock %}

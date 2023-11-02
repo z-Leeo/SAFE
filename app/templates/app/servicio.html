@@ -1,0 +1,226 @@
+{% extends 'app/base.html' %}
+
+
+{% load static %}
+
+
+{% block contenido %}
+
+<div class="register-slide">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'app/img/capacitacion.jpeg' %}" class="d-block w-100 imgslide" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/img/evaluacion.jpg' %}" class="d-block w-100 imgslide" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/img/medico.jpg' %}" class="d-block w-100 imgslide" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<br>
+<hr>
+
+<h1 class="h1MainCard">Nuestros Servicios</h1>
+
+<div class="card-container">
+  <img class="card-img" src="{% static 'app/img/fondo1.webp' %}" alt="Imagen de la tarjeta">
+  <div class="card-content">
+    <div class="card-description">La industria minera presenta una serie de desafíos únicos en términos de seguridad y salud ocupacional. 
+      La prevención de riesgos en este sector es crucial para garantizar la integridad física y mental de los trabajadores, así como para salvaguardar 
+      el entorno de trabajo. Se requiere una gestión integral de la seguridad que abarque desde la identificación y evaluación de peligros hasta la 
+      implementación de medidas preventivas y de respuesta ante emergencias.</div> 
+      <hr>
+    <p class="card-description1">Nuestros Servicios</p>
+    <p class="card-description1">1. Evaluación de Riesgos</p>
+    <p class="card-description1">2. Capacitación y Formación</p>
+    <p class="card-description1">3. Planificación de Emergencias</p>
+    <p class="card-description1">4. Auditorías de Seguridad</p>
+    
+  </div>
+</div>
+
+
+
+
+  <h1 class="tituloR" >Registros</h1>
+
+  <section class="articles">
+    <article>
+      <div class="article-wrapper">
+        <figure>
+          <img src="{% static 'app/img/fondo1.webp' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Registro de Evaluación de terrenos</h2>
+          <p class="textoP">
+            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+          </p>
+          <a href="{% url 'registroET' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+    <article>
+  
+      <div class="article-wrapper">
+        <figure>
+          <img src="{% static 'app/img/kpn-safety_plan-seguridad-minera.jpg' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Registro de Plan de capacitaciones</h2>
+          <p class="textoP">
+            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+          </p>
+          <a href="{% url 'registroPC' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+    <article>
+  
+      <div class="article-wrapper">
+        <figure>
+          <img src="{% static 'app/img/medico2.webp' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Registro de atenciones medicas o examenes</h2>
+          <p class="textoP">
+            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+          </p>
+          <a href="{% url 'registroAM' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
+
+<div class="contenido-register">
+  <h1 class="tituloR">Consultas</h1>
+
+  <section class="articles">
+    <article>
+      <div class="article-wrapper">
+        <figure>
+          <img src="{% static 'app/img/medico.jpg' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Consulta de Visita medica </h2>
+          <p class="textoP">
+            Se detalla las consultas médicas realizadas durante el período específico. 
+            Proporciona información clave sobre la salud de los trabajadores, incluyendo diagnósticos, 
+            tratamientos y recomendaciones. El seguimiento regular de estas consultas es fundamental para 
+            mantener un entorno de trabajo seguro y velar por el bienestar de los empleados.          </p>
+          <a href="{% url 'consultaVM' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+    <article>
+  
+      <div class="article-wrapper">
+        <figure>
+          <img src="{% static 'app/img/examen.jpg' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Consulta de Información Medica</h2>
+          <p class="textoP">
+            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+          </p>
+          <a href="{% url 'consultaInfoM' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+    <article>
+  
+      <div class="article-wrapper">
+        <figure>
+          <img src="{% static 'app/img/evaluacion.jpg' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Consulta de Información de capacitación</h2>
+          <p class="textoP">
+            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+          </p>
+          <a href="{% url 'consultaIC' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
+
+<div class="contenido-register3">
+  <h1 class="tituloR">Informes</h1>
+
+  <section class="cardI">
+    <article >
+      <div class="article-wrapper cardS">
+        <figure>
+          <img src="{% static 'app/img/capacitacion.jpeg' %}" alt="" />
+        </figure>
+        <div class="article-body">
+          <h2>Información Final de evaluación</h2>
+          <p class="textoP">
+            Este informe final de evaluación destaca los principales hallazgos y 
+            recomendaciones para garantizar un entorno de trabajo seguro. Se identificaron y priorizaron los riesgos, proporcionando una guía clara 
+            para la implementación de medidas preventivas. 
+          </p>
+          <a href="{% url 'informe' %}" class="read-more">
+            Ver Mas <span class="sr-only">about this is some title</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </article>
+    
+  </section>
+</div>
+<script src="{% static 'app/js/script.js' %}"></script>
+
+
+{% endblock %}

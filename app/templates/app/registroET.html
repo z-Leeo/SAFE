@@ -1,0 +1,85 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<body class="registroET">
+    
+
+    <div class="contenedorET">
+        <div class="containerET">
+            <h1 class="tituloF">Formulario De Evaluación de Terrenos</h1>
+            <hr class="hr">
+            <form  method="post"  class="formPC">
+            {% csrf_token %}
+            
+            <div class="input-box">
+            
+            <input type="text" placeholder="Nombre del Terreno" name="nombre_terreno" required />
+            </div>
+            <div class="input-box">
+            
+            <input type="text" placeholder="Ubicación del terreno" name="ubicacion_terreno" required />
+            </div>
+            <div class="column">
+            <div class="input-box">
+            
+                <input type="text" placeholder="Topografía"  name="topografia" required />
+            </div>
+            <div class="input-box">
+            <label class="fechaL">Fecha del Registro</label>
+            
+                <input type="date" placeholder="" name="fecha_registro" required />
+            </div>
+            </div>
+            <div class="gender-box">
+            <h3>Riesgos</h3>
+            <div class="gender-option">
+                <div class="gender">
+                <input type="radio" id="check-male" name="riesgo1" value="Si"  />
+                <label for="check-male">Si</label>
+                </div>
+                <div class="gender">
+                <input type="radio" id="check-female" name="riesgo1" value="No" />
+                <label for="check-female">No</label>
+                </div>
+            
+            </div>
+            </div>
+            <div class="input-box address">
+            
+            <input type="text" placeholder="Clima del terreno" name="clima" required />
+            <input type="text" placeholder="Observaciones" name="obsevacionT" required />
+            <div class="column">
+                <div class="select-box">
+                <select class="opciones" name="tipo_terreno" style="background: #d6d6d6">
+                    <option hidden>Tipos de terrenos</option>
+                    <option class="opciones" value="Subterraneo" name="tipo_terreno">Subterraneo</option>
+                    <option class="opciones" value="Superficie" name="tipo_terreno">Superficie</option>
+                    <option class="opciones" value="Cantera" name="tipo_terreno">Cantera</option>
+                    <option class="opciones" value="Montaña" name="tipo_terreno">Montaña</option>
+                </select>
+                </div>
+                <input type="text" placeholder="Sustancias Peligrosas" name="deteccionQuimico" required />
+            </div>
+            <div class="column">
+                <input type="text" placeholder="Material Utilizado" name="materialUt" required />
+                <input type="text" placeholder="Salidas de Emergencia" name="salidas" required />
+            </div>
+            <button type="submit">Enviar</button>
+            </div>
+        
+        
+        
+            </form>
+            {{mensaje}}
+        </div>
+    </div>
+    
+    </body>
+    
+
+
+
+{% endblock %}

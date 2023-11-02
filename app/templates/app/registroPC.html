@@ -1,0 +1,82 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<body class="registroPC">
+    
+
+<div class="contenedorPC">
+<div class="containerPC">
+    <h1 class="tituloF">Formulario De Plan De Capacitación</h1>
+    <hr class="hr">
+    <form  method="post"  class="formPC">
+    {% csrf_token %}
+    
+    <div class="input-box">
+       
+      <input type="text" placeholder="Nombre completo" name="nombre_completo" required />
+    </div>
+    <div class="input-box">
+     
+      <input type="text" placeholder="Email" name="email" required />
+    </div>
+    <div class="column">
+      <div class="input-box">
+     
+        <input type="text" placeholder="Nombre del curso"  name="nombre_curso" required />
+      </div>
+      <div class="input-box">
+       <label class="fechaL">Fecha del curso</label>
+       
+        <input type="date" placeholder="" name="fecha_curso" required />
+      </div>
+    </div>
+    <div class="gender-box">
+      <h3>Genero</h3>
+      <div class="gender-option">
+        <div class="gender">
+          <input type="radio" id="check-male" name="genero" value="Masculino"  />
+          <label for="check-male">Masculino</label>
+        </div>
+        <div class="gender">
+          <input type="radio" id="check-female" name="genero" value="Femenino" />
+          <label for="check-female">Femenino</label>
+        </div>
+      
+      </div>
+    </div>
+    <div class="input-box address">
+     
+      <input type="text" placeholder="Ubicación del curso" name="ubicacion_curso" required />
+      <input type="text" placeholder="Encargado del curso" name="encargado_curso" required />
+      <div class="column">
+        <div class="select-box">
+          <select class="opciones" name="metodologia_ensenanza" style="background: #d6d6d6">
+            <option hidden>Metodología de Enseñanza</option>
+            <option class="opciones" value="Presentaciones" name="metodologia_ensenanza">Presentaciones</option>
+            <option class="opciones" value="Demostraciones" name="metodologia_ensenanza">Demostraciones</option>
+            <option class="opciones" value="Ejercicios" name="metodologia_ensenanza">Ejercicios Practicos</option>
+            <option class="opciones" value="Preguntas" name="metodologia_ensenanza">Preguntas</option>
+          </select>
+        </div>
+        <input type="text" placeholder="Ciudad" name="ciudad" required />
+      </div>
+      <div class="column">
+        <input type="text" placeholder="Región" name="region" required />
+        <input type="number" placeholder="Codigo Postal" name="codigo_postal" required />
+      </div>
+      <button type="submit">Enviar</button>
+    </div>
+
+
+
+    </form>
+    {{mensaje}}
+</div>
+</div>
+
+</body>
+<script src="{% static 'app/js/script.js' %}"></script>
+
+{% endblock %}

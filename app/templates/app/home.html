@@ -1,0 +1,99 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div class="contenido">
+    <img src="{% static 'app/img/riesgos-mineria.jpg' %}" alt="" class="banner">
+
+    <div class="contenido-texto">
+    <h2 class="titulo1">Bienvenido a Safe - Especialistas en Prevención de Riesgos en Minería</h2>
+    <p class="texto1">En Safe, nos dedicamos a garantizar la seguridad y bienestar en la industria minera. Nuestro compromiso es reducir al mínimo los riesgos y promover un entorno de trabajo seguro para todos los involucrados.</p>
+    </div>
+
+</div>
+
+<section>
+    <div class="card">
+        <div class="card-header">
+          <h2>Nuestro Compromiso</h2>
+        </div>
+        <div class="card-content">
+          <p>En Safe, estamos dedicados a garantizar la seguridad y bienestar en la industria minera...</p>
+        </div>
+      </div>
+      
+</section>
+
+<section>
+    <div class="card">
+        <div class="card-header">
+          <h2>Servicios de Safe</h2>
+        </div>
+        <div class="card-content">
+          <ul>
+            <p>En safe a lo largo de nuestra experiencia hemos aprendido y adquirido nuevos servicios
+                para nuestros trabajadores en el area de mineria asegurando su salud en las mejores manos  
+            </p>
+            <li>Evaluación y Gestión de Riesgos</li>
+            <li>Capacitación y Formación</li>
+            <li>Consultoría y Asesoría</li>
+          </ul>
+        </div>
+      </div>
+      
+</section>
+
+
+<section><div class="card">
+    <div class="card-header">
+      <h2>Acerca de Nosotros</h2>
+    </div>
+    <div class="card-content">
+      <p>Historia de Safe: Fundada en [Año], Safe ha sido líder en la industria de prevención de riesgos en minería desde sus inicios...</p>
+      <p>Nuestro Equipo: Nuestro equipo está compuesto por profesionales con amplia experiencia en seguridad industrial...</p>
+      <p>Certificaciones y Reconocimientos: Safe cuenta con certificaciones y reconocimientos que respaldan nuestra experiencia...</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section>
+
+</section>
+
+<section class="contact" id="contact">
+    <h1 class="heading">
+        <span>C</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+        <span>o</span>
+    </h1>
+    <div class="row">
+        <div class="img">
+            <img class="imgcontact" decoding="async" src="{% static 'app/img/kpn-safety_plan-seguridad-minera.jpg' %}" alt="">
+        </div>
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Número">
+                <input type="text" placeholder="Asunto">
+            </div>
+            <textarea placeholder="Mensaje" name="" cols="30" rows="10"></textarea>
+            <div class="btn-contenedor">
+            <input type="submit" class="bn632-hover bn28" value="Enviar">
+            </div>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

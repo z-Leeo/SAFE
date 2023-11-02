@@ -1,0 +1,194 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+{% load humanize %}
+<body class="informes">
+    
+    <div class="botonBusc">
+    <form method="get" action="{% url 'buscar' %}" >
+        <div class="search-box">
+          <div class="input-box1">
+            <i class='bx bx-search'></i>
+            <input type="text" type="submit" placeholder="Buscar... " name="buscar">
+          </div>
+        </div>
+        </form>
+    </div>
+
+
+<div class="containerInf">
+    <div class="contenedor-informe">
+    <h1 class="tituloInf">Informes de Capacitación</h1>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Nombre Completo</th>
+                    <th>Email</th>
+                    <th>Nombre del Curso</th>
+                    <th>Fecha del Curso</th>
+                    <th>Género</th>
+                    <th>Ubicación del Curso</th>
+                    <th>Encargado del Curso</th>
+                    <th>Metodología de Enseñanza</th>
+                    <th>Ciudad</th>
+                    <th>Región</th>
+                    <th>Código Postal</th>
+                
+                </tr>
+            </thead>
+            <tbody class="active-row">
+                {% for c in capacitaciones %}
+                    <tr>
+                        <td>{{ c.nombre_completo }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.nombre_curso }}</td>
+                        <td>{{ c.fecha_curso }}</td>
+                        <td>{{ c.genero }}</td>
+                        <td>{{ c.ubicacion_curso }}</td>
+                        <td>{{ c.encargado_curso }}</td>
+                        <td>{{ c.metodologia_ensenanza }}</td>
+                        <td>{{ c.ciudad }}</td>
+                        <td>{{ c.region }}</td>
+                        <td>{{ c.codigo_postal }}</td>
+                    
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <br><br>
+
+    <div class="contenedor-informe">
+        <h1 class="tituloInf">Informes de Atenciones Medicas</h1>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo Paciente</th>
+                        <th>RUT Paciente</th>
+                        <th>Nombre del Medico</th>
+                        <th>Fecha Atención Medica</th>
+                        <th>Género</th>
+                        <th>Previsión del Paciente</th>
+                        <th>Ocupación del Paciente</th>
+                        <th>Servicio de Atención</th>
+                        <th>Historial Medico</th>
+                        <th>Alergias</th>
+                        <th>Siguiente Atención</th>
+                    
+                    </tr>
+                </thead>
+                <tbody class="active-row">
+                    {% for m in atenciones %}
+                        <tr>
+                            <td>{{ m.nombre_completoM }}</td>
+                            <td>{{ m.rutM }}</td>
+                            <td>{{ m.nombre_medicoM }}</td>
+                            <td>{{ m.fecha_atencionM }}</td>
+                            <td>{{ m.genero1 }}</td>
+                            <td>{{ m.previsionM }}</td>
+                            <td>{{ m.ocupacionM }}</td>
+                            <td>{{ m.servicio_atencionM }}</td>
+                            <td>{{ m.historialM }}</td>
+                            <td>{{ m.alergiaM }}</td>
+                            <td>{{ m.fecha_proxM }}</td>
+                        
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+    
+        </div>
+
+        <br><br>
+
+        <div class="contenedor-informe">
+            <h1 class="tituloInf">Informes de Examenes</h1>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre Completo Paciente</th>
+                            <th>RUT Paciente</th>
+                            <th>Nombre del Medico</th>
+                            <th>Fecha del Examen</th>
+                            <th>Género</th>
+                            <th>Resultados</th>
+                            <th>Observaciones</th>
+                            <th>Servicio de Atención</th>
+                            <th>Historial Medico</th>
+                            <th>Tratamiento Recomendado</th>
+                            <th>Siguiente Atención</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody class="active-row">
+                        {% for e in examenes %}
+                            <tr>
+                                <td>{{ e.nombre_completoE }}</td>
+                                <td>{{ e.rutE }}</td>
+                                <td>{{ e.nombre_medicoE }}</td>
+                                <td>{{ e.fecha_examenE }}</td>
+                                <td>{{ e.generoE }}</td>
+                                <td>{{ e.resultadoE }}</td>
+                                <td>{{ e.observacionE }}</td>
+                                <td>{{ e.servicio_atencionE }}</td>
+                                <td>{{ e.historialE }}</td>
+                                <td>{{ e.tratamientoE }}</td>
+                                <td>{{ e.fecha_proxE }}</td>
+                            
+                            </tr>
+                            {% endfor %}
+                    </tbody>
+                </table>
+        
+            </div>
+
+
+            <div class="contenedor-informe">
+                <h1 class="tituloInf">Informes de Terrenos</h1>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Terreno</th>
+                                <th>Ubicación del terreno</th>
+                                <th>Topografía</th>
+                                <th>Fecha del Registro</th>
+                                <th>Riesgos</th>
+                                <th>Clima del terreno</th>
+                                <th>Observaciones</th>
+                                <th>Tipos de terrenos</th>
+                                <th>Sustancias Peligrosas</th>
+                                <th>Material Utilizado</th>
+                                <th>Salidas de Emergencia</th>
+                            
+                            </tr>
+                        </thead>
+                        <tbody class="active-row">
+                            {% for t in terrenos %}
+                                <tr>
+                                    <td>{{ t.nombre_terreno }}</td>
+                                    <td>{{ t.ubicacion_terreno }}</td>
+                                    <td>{{ t.topografia }}</td>
+                                    <td>{{ t.fecha_registro }}</td>
+                                    <td>{{ t.riesgo1 }}</td>
+                                    <td>{{ t.clima }}</td>
+                                    <td>{{ t.obsevacionT }}</td>
+                                    <td>{{ t.tipo_terreno }}</td>
+                                    <td>{{ t.historialE }}</td>
+                                    <td>{{ t.materialUt }}</td>
+                                    <td>{{ t.salidas }}</td>
+                                
+                                </tr>
+                                {% endfor %}
+                        </tbody>
+                    </table>
+            
+                </div>
+</div>
+</body>
+
+
+{% endblock %}
