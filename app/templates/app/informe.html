@@ -17,9 +17,10 @@
         </form>
     </div>
 
-
 <div class="containerInf">
     <div class="contenedor-informe">
+        {% if perms.app.view_regcapacitacion %}
+
     <h1 class="tituloInf">Informes de Capacitación</h1>
         <table class="content-table">
             <thead>
@@ -35,6 +36,8 @@
                     <th>Ciudad</th>
                     <th>Región</th>
                     <th>Código Postal</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
                 
                 </tr>
             </thead>
@@ -52,17 +55,24 @@
                         <td>{{ c.ciudad }}</td>
                         <td>{{ c.region }}</td>
                         <td>{{ c.codigo_postal }}</td>
-                    
+                        {% if perms.app.change_regcapacitacion %}
+                        <td><a href="{% url 'modificar_formulario' c.id%}" class="btn btn-info btn-sm">Modificar</a></td>
+                        {% endif %}
+                        {% if perms.app.delete_regcapacitacion %}
+                        <td><a href="{% url 'eliminar_formulario' c.id%}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                        {% endif %}
+                     
                     </tr>
                     {% endfor %}
             </tbody>
         </table>
-
+        {% endif %}
     </div>
 
     <br><br>
 
     <div class="contenedor-informe">
+        {% if perms.app.view_regmedico %}
         <h1 class="tituloInf">Informes de Atenciones Medicas</h1>
             <table class="content-table">
                 <thead>
@@ -78,6 +88,8 @@
                         <th>Historial Medico</th>
                         <th>Alergias</th>
                         <th>Siguiente Atención</th>
+                        <th>Editar</th>
+                        <th>Borrar</th>
                     
                     </tr>
                 </thead>
@@ -95,17 +107,23 @@
                             <td>{{ m.historialM }}</td>
                             <td>{{ m.alergiaM }}</td>
                             <td>{{ m.fecha_proxM }}</td>
-                        
+                            {% if perms.app.change_regmedico %}
+                            <td><a href="{% url 'modificar_formulario1' m.id%}" class="btn btn-info btn-sm">Modificar</a></td>
+                            {% endif %}
+                            {% if perms.app.delete_regmedico %}
+                            <td><a href="{% url 'eliminar_formulario1' m.id%}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                            {% endif %}
                         </tr>
                         {% endfor %}
                 </tbody>
             </table>
-    
+            {% endif %}
         </div>
 
         <br><br>
 
         <div class="contenedor-informe">
+            {% if perms.app.view_regexamen %}
             <h1 class="tituloInf">Informes de Examenes</h1>
                 <table class="content-table">
                     <thead>
@@ -121,6 +139,8 @@
                             <th>Historial Medico</th>
                             <th>Tratamiento Recomendado</th>
                             <th>Siguiente Atención</th>
+                            <th>Editar</th>
+                            <th>Borrar</th>
                         
                         </tr>
                     </thead>
@@ -138,16 +158,24 @@
                                 <td>{{ e.historialE }}</td>
                                 <td>{{ e.tratamientoE }}</td>
                                 <td>{{ e.fecha_proxE }}</td>
-                            
+                                {% if perms.app.change_regexamen %}
+                                <td><a href="{% url 'modificar_formulario2' e.id%}" class="btn btn-info btn-sm">Modificar</a></td>
+                                {% endif %}
+                                {% if perms.app.delete_regexamen %}
+                                <td><a href="{% url 'eliminar_formulario2' e.id%}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                                {% endif %}
                             </tr>
                             {% endfor %}
                     </tbody>
                 </table>
-        
+                {% endif %}
             </div>
 
 
+            <br><br>
+
             <div class="contenedor-informe">
+                {% if perms.app.view_regterreno %}
                 <h1 class="tituloInf">Informes de Terrenos</h1>
                     <table class="content-table">
                         <thead>
@@ -163,6 +191,8 @@
                                 <th>Sustancias Peligrosas</th>
                                 <th>Material Utilizado</th>
                                 <th>Salidas de Emergencia</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>
                             
                             </tr>
                         </thead>
@@ -180,15 +210,71 @@
                                     <td>{{ t.historialE }}</td>
                                     <td>{{ t.materialUt }}</td>
                                     <td>{{ t.salidas }}</td>
-                                
+                                    {% if perms.app.change_regterreno %}
+                                    <td><a href="{% url 'modificar_formulario3' t.id%}" class="btn btn-info btn-sm">Modificar</a></td>
+                                    {% endif %}
+                                    {% if perms.app.delete_regterreno %}
+                                    <td><a href="{% url 'eliminar_formulario3' t.id%}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                                    {% endif %}
                                 </tr>
                                 {% endfor %}
                         </tbody>
                     </table>
+                    {% endif %}
             
                 </div>
 </div>
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-r/A1aBd2x0I2VdTrTasIjXYxKcSsxDfFWCV4wF/Yqz4ZMxyNKqCXSbR72HPWiMH3" crossorigin="anonymous">
+
+<style>
+    .expand-icon::before,
+    .collapse-icon::before {
+        content: '\f078'; /* Código del icono de flecha hacia abajo de Font Awesome */
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        margin-left: 10px;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+
+    .collapse-icon::before {
+        content: '\f077'; /* Código del icono de flecha hacia arriba de Font Awesome */
+    }
+
+    .contenedor-informe h1 {
+        clear: both;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        // Ocultar todas las tablas al principio
+        $(".content-table").hide();
+
+        // Añadir un ícono a los encabezados
+        $(".contenedor-informe h1").prepend('<span class="expand-icon"></span>');
+
+        // Manejar el evento de clic en los encabezados para colapsar/expandir
+        $(".contenedor-informe h1").click(function () {
+            var table = $(this).next(".content-table");
+            $(".content-table").not(table).hide(); // Ocultar otras tablas
+            table.toggle();
+
+            // Cambiar el ícono según si la tabla está visible o no
+            $(".contenedor-informe h1 span").removeClass("collapse-icon").addClass("expand-icon");
+            if (table.is(":visible")) {
+                $(this).find("span").removeClass("expand-icon").addClass("collapse-icon");
+            } else {
+                $(this).find("span").removeClass("collapse-icon").addClass("expand-icon");
+            }
+        });
+    });
+</script>
 
 {% endblock %}

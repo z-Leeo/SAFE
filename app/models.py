@@ -10,7 +10,7 @@ class regCapacitacion(models.Model):
         ('Preguntas', 'Preguntas'),
     ]
 
-    idregistro = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_completo = models.CharField(max_length=100)
     email = models.CharField(max_length=100 )
     nombre_curso = models.CharField(max_length=100)
@@ -38,7 +38,7 @@ class regMedico(models.Model):
         ('Dermatologia','Dermatologia')
     ]
 
-    idregistro = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_completoM = models.CharField(max_length=100)
     rutM = models.CharField(max_length=100 )
     nombre_medicoM = models.CharField(max_length=100)
@@ -65,7 +65,7 @@ class regExamen(models.Model):
         ('Dermatologia','Dermatologia')
     ]
 
-    idregistro = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_completoE = models.CharField(max_length=100, null=False ,default='')
     rutE = models.CharField(max_length=100, null=False )
     nombre_medicoE = models.CharField(max_length=100)
@@ -92,7 +92,7 @@ class regTerreno(models.Model):
         
     ]
 
-    idterreno = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_terreno = models.CharField(max_length=100)
     ubicacion_terreno = models.CharField(max_length=100 )
     topografia = models.CharField(max_length=100)
@@ -108,3 +108,12 @@ class regTerreno(models.Model):
     def __str__(self):
         return self.nombre_terreno
     
+class Contacto (models.Model):
+    nombre = models.CharField(max_length=50)
+    email = models.EmailField()
+    numero = models.IntegerField()
+    asunto = models.CharField(max_length=50)
+    mensaje = models.TextField()
+
+    def __str__(self):
+        return self.nombre

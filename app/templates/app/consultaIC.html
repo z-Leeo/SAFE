@@ -3,9 +3,108 @@
 {% load static %}
 
 {% block contenido %}
+<body class="consultavm">
+    
 
 
+<div class="container-consulta">
+    <img src="{% static 'app/img/mineria.webp' %}" alt="" class="medico3">
+    
+    <section class="heor">
+        <div class="heading">
+            <h2>Consultas De Información De Capacitación</h2>
+        </div>
+        <div class="container-medicina">
+            <div class="hero-image">
+                <img class="imgMedicina" src="{% static 'app/img/cap.webp' %}" alt="">
+            </div>
+            <div class="hero-content">
+                <h3>Ingrese su Nombre para buscar su registro</h3>
+                <p>En esta sección, te ofrecemos una experiencia optimizada y 
+                    personalizada para consultar información sobre tu capacitación en 
+                    seguridad minera. Nuestra plataforma te permite explorar fácilmente 
+                    tu historial de cursos, acceder a recursos educativos y conocer áreas
+                     de mejora. Nos enorgullece proporcionar un entorno claro y seguro para
+                      tus necesidades de formación. La comunicación eficaz entre tú y los 
+                      recursos de capacitación es fundamental para nosotros, y nos comprometemos 
+                      a garantizar que cada interacción sea educativa y beneficiosa para tu desarrollo profesional.
+                </p>
+                <center><button class="botonI" onclick="redirigirAOtraURL()">Inicio</button></center>
+              
+            </div>
 
 
+            
+
+        </div>
+       
+
+    </section>
+    
+    
+</div>
+
+
+<div class="botonBusc" style="margin-bottom: 200px;">
+    <form method="get" action="{% url 'consultaIC' %}" >
+        <div class="search-box" style="background-color: rgb(27, 98, 231);">
+          <div class="input-box1" style="color: black;">
+            <i class='bx bx-search'></i>
+            <input type="text" type="submit" placeholder="Buscar... " name="registro_id">
+          </div>
+        </div>
+        </form>
+    </div>
+
+
+    {% if registro %}
+    <div class="contenedor-informe">
+        <h1 class="tituloInf">Consulta de Evaluación de terrenos</h1>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Nombre del Terreno</th>
+                    <th>Ubicación del terreno</th>
+                    <th>Topografía</th>
+                    <th>Fecha del Registro</th>
+                    <th>Riesgos</th>
+                    <th>Clima del terreno</th>
+                    <th>Observaciones</th>
+                    <th>Tipos de terrenos</th>
+                    <th>Sustancias Peligrosas</th>
+                    <th>Material Utilizado</th>
+                    <th>Salidas de Emergencia</th>
+                  
+                
+                </tr>
+            </thead>
+            <tbody class="active-row">
+                <tr>
+                    <td>{{ registro.nombre_terreno }}</td>
+                    <td>{{ registro.ubicacion_terreno }}</td>
+                    <td>{{ registro.topografia }}</td>
+                    <td>{{ registro.fecha_registro }}</td>
+                    <td>{{ registro.riesgo1 }}</td>
+                    <td>{{ registro.clima }}</td>
+                    <td>{{ registro.obsevacionT }}</td>
+                    <td>{{ registro.tipo_terreno }}</td>
+                    <td>{{ registro.historialE }}</td>
+                    <td>{{ registro.materialUt }}</td>
+                    <td>{{ registro.salidas }}</td>
+                    
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+{% endif %}
+
+</body>
+
+<script>
+    function redirigirAOtraURL() {
+        window.location.href = "{% url 'home' %}";
+    }
+</script>
 
 {% endblock %}

@@ -20,6 +20,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+
+
 let Checked = null;
 //The class name can vary
 for (let CheckBox of document.getElementsByClassName('textCheckb')){

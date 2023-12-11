@@ -15,12 +15,15 @@
 </div>
 
 <section>
-    <div class="card">
+    <div class="card" id="card">
         <div class="card-header">
           <h2>Nuestro Compromiso</h2>
         </div>
         <div class="card-content">
-          <p>En Safe, estamos dedicados a garantizar la seguridad y bienestar en la industria minera...</p>
+          <p>En Safe, estamos dedicados a garantizar la seguridad y bienestar en la industria minera. 
+            Somos conscientes de los desafíos inherentes a este sector y comprendemos la importancia de salvaguardar 
+            la integridad de las personas y los activos. Nuestra misión es ser un socio confiable y eficaz en la prevención 
+            de riesgos, contribuyendo así a un entorno minero más seguro y sostenible.</p>
         </div>
       </div>
       
@@ -34,11 +37,13 @@
         <div class="card-content">
           <ul>
             <p>En safe a lo largo de nuestra experiencia hemos aprendido y adquirido nuevos servicios
-                para nuestros trabajadores en el area de mineria asegurando su salud en las mejores manos  
+                para nuestros trabajadores en el area de mineria asegurando su salud en las mejores manos, tal como:
             </p>
-            <li>Evaluación y Gestión de Riesgos</li>
+            <li>Evaluación de terrenos y Gestión de Riesgos</li>
             <li>Capacitación y Formación</li>
             <li>Consultoría y Asesoría</li>
+            <li>Atenciones Medicas</li>
+            <li>Examenes Medicos</li>
           </ul>
         </div>
       </div>
@@ -46,14 +51,18 @@
 </section>
 
 
-<section><div class="card">
+<section><div class="card" >
     <div class="card-header">
       <h2>Acerca de Nosotros</h2>
     </div>
     <div class="card-content">
-      <p>Historia de Safe: Fundada en [Año], Safe ha sido líder en la industria de prevención de riesgos en minería desde sus inicios...</p>
-      <p>Nuestro Equipo: Nuestro equipo está compuesto por profesionales con amplia experiencia en seguridad industrial...</p>
-      <p>Certificaciones y Reconocimientos: Safe cuenta con certificaciones y reconocimientos que respaldan nuestra experiencia...</p>
+      <p>Fundada en 1997, En Safe Contamos con una trayectoria dedicada 
+        a la seguridad en la industria minera, nos hemos fortalecido con el tiempo, 
+        expandiendo nuestros servicios para garantizar la salud y el bienestar de nuestros 
+        trabajadores. Ofrecemos evaluación de terrenos, gestión de riesgos, capacitación integral, 
+        consultoría especializada, atención médica y exámenes médicos exhaustivos. Nos comprometemos 
+        a evolucionar con la industria y mantener estándares excepcionales, demostrando una dedicación 
+        constante a la seguridad y al bienestar en el entorno minero mediante la digitalización para un trabajo mas eficiente.</p>
     </div>
   </div>
 </section>
@@ -79,16 +88,20 @@
         <div class="img">
             <img class="imgcontact" decoding="async" src="{% static 'app/img/kpn-safety_plan-seguridad-minera.jpg' %}" alt="">
         </div>
-        <form action="">
+        <form  method="post">
+          
+          {% csrf_token %}
+
+
             <div class="inputBox">
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Nombre" name="nombre">
+                <input type="email" placeholder="Email" name="email">
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="Número">
-                <input type="text" placeholder="Asunto">
+                <input type="number" placeholder="Número" name="numero">
+                <input type="text" placeholder="Asunto" name="asunto">
             </div>
-            <textarea placeholder="Mensaje" name="" cols="30" rows="10"></textarea>
+            <textarea placeholder="Mensaje" name="mensaje" cols="30" rows="10" ></textarea>
             <div class="btn-contenedor">
             <input type="submit" class="bn632-hover bn28" value="Enviar">
             </div>

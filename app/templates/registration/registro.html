@@ -10,7 +10,7 @@
 <div class="wrapper register-w">
 
     <div class="form-box register">
-        <h2 class="text-login" >Registrar</h2>
+        <h2 class="text-login" style="color: black; font-weight: 600;">Registrar</h2>
         <form action="{% url 'registro' %}" enctype="multipart/form-data"  method="POST">
             {% csrf_token %}
             <div class="input-box">
@@ -40,10 +40,6 @@
               <div class="remember-forgot">
                 <label for="" class="textCheck"><input type="checkbox" name="ingtec" class="textCheckb">Ingeniero o Tecnico</label>
               </div>
-            <br>
-            <div class="remember-forgot">
-              <label for="" class="textCheck"><input type="checkbox" name="Medico" class="textCheckb">Medico</label>
-            </div>
             <br>
             <div class="remember-forgot">
                 <label for="" class="textCheck"><input type="checkbox" name="supervisor" class="textCheckb">Supervisor</label>

@@ -334,10 +334,10 @@ ul{
 .bn632-hover.bn28 {
   background-image: linear-gradient(
     to right,
-    #eb3941,
-    #f15e64,
-    #e14e53,
-    #e2373f
+    #920007,
+    #cb0108,
+    #dc070f,
+    #ff2732
   );
   box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
 }
@@ -453,6 +453,7 @@ ul{
   
 
 }
+
 
 
 
@@ -1070,6 +1071,7 @@ margin-bottom: 100px;
   height: 100%;
   background-color: #272525;
   border-radius: 20px;
+  margin: 80px;
 }
 
 .informes{

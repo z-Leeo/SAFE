@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+<!-- modificar.html -->
+<!-- modificar.html -->
+<!-- modificar.html -->
+<div class="containerAT">
+    <h1 class="tituloF">Modificar Formulario de Atenciones Médicas</h1>
+    <hr class="hr">
+    <form method="post" class="formPC">
+        {% csrf_token %}
+
+        <div class="input-box">
+            {{ form1.nombre_completoM }}
+        </div>
+        <div class="input-box">
+            {{ form1.rutM }}
+        </div>
+        <div class="column">
+            <div class="input-box">
+                {{ form1.nombre_medicoM }}
+            </div>
+            <div class="input-box">
+                <label class="fechaL">Fecha de la Atención Médica</label>
+                {{ form1.fecha_atencionM }}
+            </div>
+        </div>
+        <div class="gender-box">
+            <h3>Género</h3>
+            <div class="gender-option">
+                <div class="gender">
+                    {{ form1.genero1 }}
+                </div>
+            </div>
+        </div>
+        <div class="input-box address">
+            {{ form1.previsionM }}
+            {{ form1.ocupacionM }}
+            <div class="column">
+                <div class="select-box">
+                    {{ form1.servicio_atencionM }}
+                </div>
+                {{ form1.historialM }}
+            </div>
+            <div class="column">
+                {{ form1.alergiaM }}
+                <br>
+                <h5 class="proxAT" style="color: rgb(105, 105, 105); font-weight: 600;">Siguiente Atención
+                    {{ form1.fecha_proxM }}
+                </h5>
+            </div>
+            <button type="submit">Guardar cambios</button>
+        </div>
+    </form>
+    {{ mensaje }}
+</div>
+
+
+
+{% endblock %}

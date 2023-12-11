@@ -7,84 +7,93 @@
 <body class="registroAE">
     <div class="contenedorAE">
         <h1 style="color: azure; text-align: center;">TIPOS DE FORMULARIOS</h1>
-        <center><button id="btnMedico" style="width: 300px; height: 50px;"><a  href="{% url 'registroAM' %}"  style="text-decoration: none;" class="btnA">Medico</a></button></center>
-        <center><button id="btnExamen" style="width: 300px; height: 50px;"><a  href="{% url 'registroAE' %}"  style="text-decoration: none;" class="btnA">Examen</a></button></center>        
+        <center><button id="btnMedico" style="width: 300px; height: 50px;"><a  href="{% url 'registroAM' %}"  style="text-decoration: none;" class="btnA" >Medico</a></button></center>
+        <center><button id="btnExamen" style="width: 300px; height: 50px;"><a  href="{% url 'registroAE' %}"  style="text-decoration: none;" class="btnA" >Examen</a></button></center>        
         <br><hr>
 
 
-<div class="containerAE"  >
-    <h1 class="tituloF">Formulario De Examen</h1>
-    <hr class="hr">
+    <div class="containerAE"  >
+        <h1 class="tituloF">Formulario De Examen</h1>
+        <hr class="hr">
+        
+
     
-    <form  method="post"  class="formPC">
-    {% csrf_token %}
-    
-    <div class="input-box">
-    
-    <input type="text" placeholder="Nombre Completo Paciente" name="nombre_completoE" required />
-    </div>
-    <div class="input-box">
-    
-    <input type="text" placeholder="RUT Paciente" name="rutE" required />
-    </div>
-    <div class="column">
-    <div class="input-box">
-    
-        <input type="text" placeholder="Nombre del Medico"  name="nombre_medicoE" required />
-    </div>
-    <div class="input-box">
-    <label class="fechaL">Fecha del Examen</label>
-    
-        <input type="date" placeholder="" name="fecha_examenE" required />
-    </div>
-    </div>
-    <div class="gender-box">
-    <h3>Genero</h3>
-    <div class="gender-option">
-        <div class="gender">
-        <input type="radio" id="check-male" name="generoE" value="Masculino"  />
-        <label for="check-male">Masculino</label>
+
+
+        <form  method="post"  class="formPC">
+        {% csrf_token %}
+        
+        <div class="input-box">
+        
+        <input type="text" placeholder="Nombre Completo Paciente" name="nombre_completoE" required />
         </div>
-        <div class="gender">
-        <input type="radio" id="check-female" name="generoE" value="Femenino" />
-        <label for="check-female">Femenino</label>
+        <div class="input-box">
+        
+        <input type="text" placeholder="RUT Paciente" name="rutE" required />
         </div>
-    
-    </div>
-    </div>
-    <div class="input-box address">
-    
-    <input type="text" placeholder="Resultados" name="resultadoE" required />
-    <input type="text" placeholder="Observaciones" name="observacionE" required />
-    <div class="column">
-        <div class="select-box">
-        <select class="opciones" name="servicio_atencionE" style="background: #d6d6d6">
-            <option hidden>Servicio de Atención</option>
-            <option class="opciones" value="Cardiologo" name="servicio_atencionE">Cardiologo</option>
-            <option class="opciones" value="Odontologia" name="servicio_atencionE">Odontologia</option>
-            <option class="opciones" value="Medicina General" name="servicio_atencionE">Medicina General</option>
-            <option class="opciones" value="Traumatologia" name="servicio_atencionE">Traumatologia</option>
-            <option class="opciones" value="Psicologia" name="servicio_atencionE">Psicologia</option>
-            <option class="opciones" value="Dermatologia" name="servicio_atencionE">Dermatologia</option>
-
-        </select>
+        <div class="column">
+        <div class="input-box">
+        
+            <input type="text" placeholder="Nombre del Medico"  name="nombre_medicoE" required />
         </div>
-        <input type="text" placeholder="Historial Medico" name="historialE" required />
+        <div class="input-box">
+        <label class="fechaL">Fecha del Examen</label>
+        
+            <input type="date" placeholder="" name="fecha_examenE" required />
+        </div>
+        </div>
+        <div class="gender-box">
+        <h3>Genero</h3>
+        <div class="gender-option">
+            <div class="gender">
+            <input type="radio" id="check-male" name="generoE" value="Masculino"  />
+            <label for="check-male">Masculino</label>
+            </div>
+            <div class="gender">
+            <input type="radio" id="check-female" name="generoE" value="Femenino" />
+            <label for="check-female">Femenino</label>
+            </div>
+        
+        </div>
+        </div>
+        <div class="input-box address">
+        
+        <input type="text" placeholder="Resultados" name="resultadoE" required />
+        <input type="text" placeholder="Observaciones" name="observacionE" required />
+        <div class="column">
+            <div class="select-box">
+            <select class="opciones" name="servicio_atencionE" style="background: #d6d6d6">
+                <option hidden>Servicio de Atención</option>
+                <option class="opciones" value="Cardiologo" name="servicio_atencionE">Cardiologo</option>
+                <option class="opciones" value="Odontologia" name="servicio_atencionE">Odontologia</option>
+                <option class="opciones" value="Medicina General" name="servicio_atencionE">Medicina General</option>
+                <option class="opciones" value="Traumatologia" name="servicio_atencionE">Traumatologia</option>
+                <option class="opciones" value="Psicologia" name="servicio_atencionE">Psicologia</option>
+                <option class="opciones" value="Dermatologia" name="servicio_atencionE">Dermatologia</option>
+
+            </select>
+            </div>
+            <input type="text" placeholder="Historial Medico" name="historialE" required />
+        </div>
+        <div class="column">
+            <input type="text" placeholder="Tratamiento Recomendado" name="tratamientoE" required />
+            <br>
+            <h5 class="proxAT" style="color: rgb(105, 105, 105); font-weight: 600;" >Siguiente Atención
+            <input type="date" placeholder="" name="fecha_proxE" required  /></h5>
+        </div>
+        <button type="submit">Enviar</button>
+
+        </div>
+
+
+
+        </form>
+        {{mensaje}}
     </div>
-    <div class="column">
-        <input type="text" placeholder="Tratamiento Recomendado" name="tratamientoE" required />
-        <br>
-        <h5 class="proxAT" style="color: rgb(105, 105, 105); font-weight: 600;" >Siguiente Atención
-        <input type="date" placeholder="" name="fecha_proxE" required  /></h5>
-    </div>
-    <button type="submit">Enviar</button>
 
-    </div>
-
-
-
-    </form>
-    {{mensaje}}
 </div>
+
+
+
 </body>
 {% endblock %}

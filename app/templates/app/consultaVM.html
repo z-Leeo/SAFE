@@ -32,7 +32,7 @@
                       fundamental para nosotros, y estamos comprometidos a garantizar
                       que cada encuentro sea satisfactorio y esclarecedor.
                 </p>
-                <center><button class="botonI">Inicio</button></center>
+                <center><button class="botonI" onclick="redirigirAOtraURL()">Inicio</button></center>
               
             </div>
 
@@ -100,5 +100,9 @@
 
 </body>
 
-
+<script>
+    function redirigirAOtraURL() {
+        window.location.href = "{% url 'home' %}";
+    }
+</script>
 {% endblock %}

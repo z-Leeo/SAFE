@@ -61,7 +61,10 @@
 
   <h1 class="tituloR" >Registros</h1>
 
+
+  
   <section class="articles">
+    {% if perms.app.add_regterreno %}
     <article>
       <div class="article-wrapper">
         <figure>
@@ -70,7 +73,9 @@
         <div class="article-body">
           <h2>Registro de Evaluación de terrenos</h2>
           <p class="textoP">
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+            Accede a informes breves y claros sobre las condiciones geológicas, riesgos identificados 
+            y medidas de mitigación en nuestra sección de Evaluación de Terrenos. Mantenemos altos estándares 
+            para tu seguridad en la industria minera, proporcionando información esencial para un entorno de trabajo seguro.
           </p>
           <a href="{% url 'registroET' %}" class="read-more">
             Ver Mas <span class="sr-only">about this is some title</span>
@@ -81,8 +86,11 @@
         </div>
       </div>
     </article>
+    {% endif %}
+    
     <article>
-  
+
+      {% if perms.app.add_regcapacitacion %}
       <div class="article-wrapper">
         <figure>
           <img src="{% static 'app/img/kpn-safety_plan-seguridad-minera.jpg' %}" alt="" />
@@ -90,8 +98,10 @@
         <div class="article-body">
           <h2>Registro de Plan de capacitaciones</h2>
           <p class="textoP">
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-          </p>
+            Accede de manera rápida y organizada los detalles de tu formación en seguridad minera. 
+            Accede a información clave sobre cursos realizados, recursos educativos y áreas de mejora.
+             Este registro te capacita con el conocimiento necesario para abordar los desafíos en la 
+             industria minera de manera segura y eficiente.         </p>
           <a href="{% url 'registroPC' %}" class="read-more">
             Ver Mas <span class="sr-only">about this is some title</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
@@ -101,6 +111,10 @@
         </div>
       </div>
     </article>
+      {% endif %}
+
+      {% if perms.app.add_regexamen %}
+      {% if perms.app.add_regmedico %}
     <article>
   
       <div class="article-wrapper">
@@ -110,8 +124,10 @@
         <div class="article-body">
           <h2>Registro de atenciones medicas o examenes</h2>
           <p class="textoP">
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
-          </p>
+            Accede rápidamente a tu historial de atenciones médicas y resultados de exámenes en el ámbito minero. 
+            Proporcionamos información clara y organizada para una toma de decisiones informada sobre tu salud y 
+            bienestar en el entorno laboral. Ofrecemos un acceso fácil y 
+            transparente a tu información médica.</p>
           <a href="{% url 'registroAM' %}" class="read-more">
             Ver Mas <span class="sr-only">about this is some title</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
@@ -121,13 +137,18 @@
         </div>
       </div>
     </article>
+    {% endif %}
+    {% endif %}
   </section>
+  
+
 </div>
 
 <div class="contenido-register">
   <h1 class="tituloR">Consultas</h1>
 
   <section class="articles">
+    {% if perms.app.view_regmedico %}
     <article>
       <div class="article-wrapper">
         <figure>
@@ -149,8 +170,9 @@
         </div>
       </div>
     </article>
+    {% endif %}
     <article>
-  
+      {% if perms.app.view_regexamen %}
       <div class="article-wrapper">
         <figure>
           <img src="{% static 'app/img/examen.jpg' %}" alt="" />
@@ -158,7 +180,11 @@
         <div class="article-body">
           <h2>Consulta de Información Medica</h2>
           <p class="textoP">
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+            te ofrecemos un acceso seguro y conveniente a la información sobre tu salud laboral.
+             Aquí, podrás revisar detalladamente los resultados de tus exámenes médicos realizados 
+             en el ámbito minero. Nos esforzamos por proporcionar transparencia y claridad en cada informe,
+              asegurando que comprendas completamente tu estado de salud. Este servicio te permite tomar medidas
+               informadas y proactivas para mantener tu bienestar en el entorno laboral minero.
           </p>
           <a href="{% url 'consultaInfoM' %}" class="read-more">
             Ver Mas <span class="sr-only">about this is some title</span>
@@ -169,8 +195,9 @@
         </div>
       </div>
     </article>
+    {% endif %}
     <article>
-  
+      {% if perms.app.view_regcapacitacion %}
       <div class="article-wrapper">
         <figure>
           <img src="{% static 'app/img/evaluacion.jpg' %}" alt="" />
@@ -178,7 +205,12 @@
         <div class="article-body">
           <h2>Consulta de Información de capacitación</h2>
           <p class="textoP">
-            Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+           te brindamos acceso instantáneo y detallado a todos los aspectos relacionados 
+            con tu formación en seguridad minera. Aquí, podrás revisar el historial de tus programas 
+            de capacitación, obtener información sobre los cursos realizados y acceder a recursos 
+            educativos relevantes. 
+            esta sección está destinada a empoderarte con el 
+            conocimiento necesario para enfrentar los desafíos en la industria minera de manera segura y eficiente.
           </p>
           <a href="{% url 'consultaIC' %}" class="read-more">
             Ver Mas <span class="sr-only">about this is some title</span>
@@ -189,24 +221,25 @@
         </div>
       </div>
     </article>
+    {% endif %}
   </section>
 </div>
 
 <div class="contenido-register3">
   <h1 class="tituloR">Informes</h1>
 
-  <section class="cardI">
+ <section class="cardI">
     <article >
       <div class="article-wrapper cardS">
         <figure>
           <img src="{% static 'app/img/capacitacion.jpeg' %}" alt="" />
         </figure>
         <div class="article-body">
-          <h2>Información Final de evaluación</h2>
+          <h2>Informes finales</h2>
           <p class="textoP">
-            Este informe final de evaluación destaca los principales hallazgos y 
-            recomendaciones para garantizar un entorno de trabajo seguro. Se identificaron y priorizaron los riesgos, proporcionando una guía clara 
-            para la implementación de medidas preventivas. 
+            Este informe final se destaca la principal información y 
+            recomendaciones para garantizar un entorno de trabajo seguro, buscando tener la información mas precisa para un 
+            un documento completo y accesible.
           </p>
           <a href="{% url 'informe' %}" class="read-more">
             Ver Mas <span class="sr-only">about this is some title</span>

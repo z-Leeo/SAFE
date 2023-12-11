@@ -8,13 +8,15 @@
 <body class="registroAM">
     <div class="contenedorAT">
         <h1 style="color: azure; text-align: center;">TIPOS DE FORMULARIOS</h1>
-        <center><button id="btnMedico" style="width: 300px; height: 50px;"><a  href="{% url 'registroAM' %}"  style="text-decoration: none;" class="btnA">Medico</a></button></center>
-        <center><button id="btnExamen" style="width: 300px; height: 50px;"><a  href="{% url 'registroAE' %}"  style="text-decoration: none;" class="btnA">Examen</a></button></center> 
+        <center><button id="btnMedico" style="width: 300px; height: 50px;" ><a  href="{% url 'registroAM' %}"  style="text-decoration: none;" class="btnA">Medico</a></button></center>
+        <center><button id="btnExamen" style="width: 300px; height: 50px;" ><a  href="{% url 'registroAE' %}"  style="text-decoration: none;" class="btnA">Examen</a></button></center> 
         <br><hr>
         <div class="containerAT"  >
             <h1 class="tituloF">Formulario De Atenciones Medica</h1>
             <hr class="hr">
        
+
+
           
             <form  method="post"  class="formPC">
             {% csrf_token %}
@@ -87,8 +89,12 @@
             {{mensaje}}
         </div>
 
+       
         
     </div>
+
+   
+    
     
     </body>
 {% endblock %}
